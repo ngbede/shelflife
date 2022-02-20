@@ -72,12 +72,6 @@ class _TopupsState extends State<Topups> {
         body: Column(
           children: <Widget>[
             const InputField(name: "Search"),
-            // Container(
-            //   child: Align(
-            //     alignment: Alignment.bottomLeft,
-            //     child: ,
-            //   ),
-            // ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10),

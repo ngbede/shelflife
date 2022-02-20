@@ -318,16 +318,37 @@ class _ConfirmTopupState extends State<ConfirmTopup> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const CustomButton(title: "Request top-up"),
-                    RedirectLink(
-                      title: "Cancel and go back",
-                      includeArrow: false,
-                      boldTitle: false,
-                      titleSize: 16,
-                      textColor: Colors.black,
-                      function: () {
-                        Navigator.pop(context);
-                      },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomButton(
+                          title: "Request top-up",
+                          function: () {
+                            log("Pop up confirmation modal");
+                          },
+                          verticalPad: 20,
+                          horizontalPad: 20,
+                          textSize: 22,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RedirectLink(
+                            title: "Cancel and go back",
+                            includeArrow: false,
+                            boldTitle: false,
+                            titleSize: 17,
+                            textColor: const Color(0XFF2E3441),
+                            function: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),

@@ -10,6 +10,7 @@ class ButtonCard extends StatelessWidget {
   final String? iconPath;
   final bool hasIcon;
   final int? flex;
+  final void Function()? function;
   const ButtonCard({
     Key? key,
     required this.title,
@@ -19,6 +20,7 @@ class ButtonCard extends StatelessWidget {
     this.height = 10,
     this.hasIcon = true,
     this.iconPath,
+    this.function,
   }) : super(key: key);
 
   @override
@@ -64,6 +66,7 @@ class ButtonCard extends StatelessWidget {
                   title: buttonLabel,
                   hasIcon: hasIcon,
                   iconPath: iconPath,
+                  function: function,
                 ),
               )
             ],

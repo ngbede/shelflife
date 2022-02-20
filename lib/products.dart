@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shelflife/components/button_card.dart';
 import 'package:shelflife/components/recommendation_card.dart';
@@ -15,12 +17,15 @@ class Products extends StatelessWidget {
     final ScrollController _controller2 = ScrollController();
     return ListView(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: ButtonCard(
             title: "21 subscriptions",
             infoText: "active at Bugons Pharmacy",
             buttonLabel: "View all",
+            function: () {
+              log("Navigate to manage subscription view");
+            },
             hasIcon: false,
             flex: 2,
           ),

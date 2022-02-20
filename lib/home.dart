@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelflife/components/base_card.dart';
@@ -163,6 +165,9 @@ class Home extends StatelessWidget {
             title: "Talk to us",
             infoText: "Chat with our support about questions you might have",
             buttonLabel: "Chat with us",
+            function: () {
+              log("pop the intercom modal chat box!");
+            },
             iconPath: svgIcons["intercom"]!,
           )
         ],
