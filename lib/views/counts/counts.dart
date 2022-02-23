@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shelflife/components/shipment_ard.dart';
+import 'package:shelflife/components/shipment_card.dart';
 
 class Counts extends StatelessWidget {
   const Counts({Key? key}) : super(key: key);

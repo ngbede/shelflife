@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shelflife/components/shipment_ard.dart';
+import 'package:shelflife/components/shipment_card.dart';
 
 class Deliveries extends StatelessWidget {
   const Deliveries({Key? key}) : super(key: key);
