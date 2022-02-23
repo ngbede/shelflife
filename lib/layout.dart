@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shelflife/components/header_item.dart';
+import 'package:shelflife/components/menu_item.dart';
 import 'package:shelflife/views/counts/counts.dart';
 import 'package:shelflife/views/deliveries/deliveries.dart';
 import 'package:shelflife/views/finances/finances.dart';
@@ -137,23 +138,54 @@ class _LayoutState extends State<Layout> {
             const DrawerHeader(
               child: Text('Drawer Header'),
             ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+            MenuItem(
+              imagepath: "home",
+              title: "Home",
+              width: 18,
+              function: () {},
             ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
+            MenuItem(
+              imagepath: "products",
+              title: "Products",
+              width: 16,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "finances",
+              title: "Finances",
+              width: 16,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "deliveries",
+              title: "Deliveries",
+              width: 18,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "counts",
+              title: "Counts",
+              width: 16,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "user",
+              title: "My account",
+              width: 16,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "products",
+              title: "Resources",
+              width: 16,
+              function: () {},
+            ),
+            MenuItem(
+              imagepath: "intercom",
+              title: "Chat with us",
+              width: 16,
+              function: () {},
+              lastItem: true,
             ),
           ],
         ),

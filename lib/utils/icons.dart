@@ -23,4 +23,5 @@ const Map<String, String> svgIcons = {
   "new": "assets/icons/iconNew.svg",
   "checkMark": "assets/icons/circlecheckmark.svg",
   "close": "assets/icons/close.svg",
+  "user": "assets/icons/user.svg"
 };
