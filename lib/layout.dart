@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:shelflife/components/header_item.dart';
-import 'package:shelflife/counts.dart';
-import 'package:shelflife/deliveries.dart';
-import 'package:shelflife/finances.dart';
-import 'package:shelflife/home.dart';
-import 'package:shelflife/products.dart';
+import 'package:shelflife/views/counts/counts.dart';
+import 'package:shelflife/views/deliveries/deliveries.dart';
+import 'package:shelflife/views/finances/finances.dart';
+import 'package:shelflife/views/home/home.dart';
+import 'package:shelflife/views/products/products.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelflife/utils/icons.dart';
 

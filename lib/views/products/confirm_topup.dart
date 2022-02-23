@@ -11,7 +11,7 @@ import 'package:shelflife/components/redirect_link.dart';
 import 'package:shelflife/components/sub_total.dart';
 import 'package:shelflife/components/topup_product.dart';
 
-import 'utils/icons.dart';
+import '../../utils/icons.dart';
 
 class ConfirmTopup extends StatefulWidget {
   const ConfirmTopup({Key? key}) : super(key: key);

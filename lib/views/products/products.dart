@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:shelflife/components/button_card.dart';
 import 'package:shelflife/components/recommendation_card.dart';
 import 'package:shelflife/components/redirect_link.dart';
-import 'package:shelflife/topups.dart';
+import 'package:shelflife/views/products/topups.dart';
 
 class Products extends StatelessWidget {
   const Products({Key? key}) : super(key: key);
