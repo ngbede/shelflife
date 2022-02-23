@@ -1,7 +1,8 @@
+import 'dart:developer';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:shelflife/components/product_card.dart';
 import 'package:shelflife/components/product_label.dart';
-import 'package:shelflife/components/redirect_link.dart';
 import 'package:shelflife/components/status_card.dart';
 
 class DeliveryDetail extends StatelessWidget {
@@ -159,17 +160,25 @@ class DeliveryDetail extends StatelessWidget {
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: Row(
-              children: const [
-                Text("Is there an issue with this delivery? "),
-                Expanded(
-                  child: RedirectLink(
-                    title: "Contact customer support",
-                    boldTitle: false,
-                    includeArrow: false,
+            child: RichText(
+              text: TextSpan(
+                text: "Is there an issue with this delivery? ",
+                style: const TextStyle(color: Colors.black, fontSize: 16),
+                children: [
+                  TextSpan(
+                    text: "\nContact customer support",
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        log("pop up the intercom message modal!");
+                      },
+                    style: const TextStyle(
+                      color: Color(0XFF5939A4),
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              textAlign: TextAlign.center,
             ),
           )
         ],
