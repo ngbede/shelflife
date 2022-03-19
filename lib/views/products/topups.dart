@@ -122,7 +122,7 @@ class _TopupsState extends State<Topups> {
                                       width: 25,
                                     ),
                                     Text(
-                                      sampleProducts[index].name,
+                                      sampleProducts[index].fullName,
                                       style: TextStyle(
                                         fontSize: 16,
                                         color: _selected
