@@ -2,6 +2,7 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shelflife/models/sample_products.dart';
+import 'package:shelflife/utils/enums.dart';
 import '../models/topup.dart';
 import '../models/product.dart';
 
@@ -47,6 +48,28 @@ class TopupController extends StateNotifier<Topup> {
     copyCart.removeWhere((prod) => prod.id == product.id);
 
     state = Topup(
+      products: copyProducts,
+      cart: copyCart,
+    );
+  }
+
+  // sorting
+
+  void sortProducts(SortOrder sortOrder) {
+    // get current state
+    Map<String, Map<dynamic, dynamic>> copyProducts = state.products!;
+    List<Product> copyCart = state.cart!;
+    List<Product> copySubs = state.subscriptions!;
+
+    if (sortOrder == SortOrder.asc) {
+      copySubs.sort(((a, b) => a.fullName.compareTo(b.fullName)));
+    } else {
+      // descending order
+      copySubs.sort(((a, b) => a.fullName.compareTo(b.fullName)));
+      copySubs = copySubs.reversed.toList();
+    }
+    state = Topup(
+      subscriptions: copySubs,
       products: copyProducts,
       cart: copyCart,
     );
