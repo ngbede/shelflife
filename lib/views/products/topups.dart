@@ -7,6 +7,7 @@ import 'package:shelflife/components/custom_button.dart';
 import 'package:shelflife/components/inputfield.dart';
 import 'package:shelflife/components/topup_picker.dart';
 import 'package:shelflife/controllers/topup_controller.dart';
+import 'package:shelflife/utils/enums.dart';
 import 'package:shelflife/views/products/confirm_topup.dart';
 import 'package:shelflife/utils/icons.dart';
 
@@ -91,6 +92,7 @@ class _TopupsState extends State<Topups> {
                             topupNotifier.addProduct(
                               topupModel.subscriptions![index],
                             );
+                            //  topupNotifier.sortProducts(SortOrder.asc);
                           },
                         );
                       },
@@ -121,13 +123,16 @@ class _TopupsState extends State<Topups> {
                           title: "Request top-up",
                           hasIcon: true,
                           rightSide: true,
+                          active: topupModel.cart!.isNotEmpty,
                           function: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const ConfirmTopup(),
-                              ),
-                            );
+                            if (topupModel.cart!.isNotEmpty) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ConfirmTopup(),
+                                ),
+                              );
+                            }
                           },
                         )
                       ],
