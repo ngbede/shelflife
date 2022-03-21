@@ -5,8 +5,10 @@ class Product {
   final String basicUnit;
   final int presentation;
   final String category;
+  final int? quantityOnShelf;
   final bool? eligibleForPAYS;
   final bool? eligibleForPOD;
+  bool selected;
 
   Product({
     required this.id,
@@ -15,8 +17,10 @@ class Product {
     required this.basicUnit,
     required this.presentation,
     required this.category,
+    this.quantityOnShelf,
     this.eligibleForPAYS,
     this.eligibleForPOD,
+    this.selected = false,
   });
 
   Map<String, dynamic> toJson() => {
@@ -35,5 +39,9 @@ class Product {
       eligibleForPAYS: json["eligibleForPAYS"],
       eligibleForPOD: json["eligibleForPOD"],
     );
+  }
+
+  void checkProduct() {
+    selected = !selected;
   }
 }
