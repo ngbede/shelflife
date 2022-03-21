@@ -5,13 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelflife/components/custom_button.dart';
 import 'package:shelflife/components/inputfield.dart';
+import 'package:shelflife/components/topup_picker.dart';
 import 'package:shelflife/controllers/topup_controller.dart';
 import 'package:shelflife/views/products/confirm_topup.dart';
-import 'package:shelflife/models/sample_products.dart';
 import 'package:shelflife/utils/icons.dart';
 
-// TODO: Refactor the screen
-// TODO: Add some seprate state logic for now
 // TODO: Add radio button for sorting products alphabetically
 class Topups extends StatefulWidget {
   const Topups({Key? key}) : super(key: key);
@@ -19,8 +17,6 @@ class Topups extends StatefulWidget {
   @override
   _TopupsState createState() => _TopupsState();
 }
-
-bool _selected = false;
 
 class _TopupsState extends State<Topups> {
   @override
@@ -87,106 +83,15 @@ class _TopupsState extends State<Topups> {
                     child: ListView.builder(
                       itemCount: topupModel.subscriptions!.length,
                       itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
+                        return TopupPicker(
+                          product: topupModel.subscriptions![index],
+                          showBottomBorder:
+                              index == topupModel.subscriptions!.length - 1,
+                          function: () {
                             topupNotifier.addProduct(
                               topupModel.subscriptions![index],
                             );
-                            // print(topupModel.cart);
-                            // print(topupModel.products);
-                            // print(topupNotifier.subTotalToPay());
-                            // print(topupModel.toJson());
                           },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border(
-                                top: const BorderSide(color: Color(0XFFE1E1E1)),
-                                bottom: index == sampleProducts.length - 1
-                                    ? const BorderSide(color: Color(0XFFE1E1E1))
-                                    : BorderSide.none,
-                              ),
-                            ),
-                            height: 50,
-                            width: double.infinity,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 3),
-                                    child: Row(
-                                      children: [
-                                        topupModel
-                                                .subscriptions![index].selected
-                                            ? SizedBox(
-                                                width: 4,
-                                                height: double.infinity,
-                                                child: RotatedBox(
-                                                  quarterTurns: 3,
-                                                  child: Container(
-                                                    width: 2,
-                                                    color:
-                                                        const Color(0XFF362852),
-                                                  ),
-                                                ),
-                                              )
-                                            : const SizedBox(),
-                                        SvgPicture.asset(
-                                          svgIcons["POD"]!,
-                                          width: 25,
-                                        ),
-                                        Text(
-                                          topupModel
-                                              .subscriptions![index].fullName,
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            color: topupModel
-                                                    .subscriptions![index]
-                                                    .selected
-                                                ? const Color(0XFF362852)
-                                                : Colors.black,
-                                            fontWeight: topupModel
-                                                    .subscriptions![index]
-                                                    .selected
-                                                ? FontWeight.bold
-                                                : null,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 10),
-                                  child: Row(
-                                    children: [
-                                      // topupNotifier
-                                      //         .pharmacyProducts[index].selected
-                                      //     ? SvgPicture.asset(
-                                      //         svgIcons["checkMark"]!,
-                                      //         width: 15,
-                                      //         color: const Color(0XFF4D2999),
-                                      //       )
-                                      //     : const SizedBox(),
-                                      Text(
-                                        " ${topupModel.subscriptions![index].selected ? ' SELECTED' : ' SELECT'}",
-                                        style: TextStyle(
-                                          fontSize: 15.5,
-                                          fontWeight: FontWeight.bold,
-                                          color: topupModel
-                                                  .subscriptions![index]
-                                                  .selected
-                                              ? const Color(0XFF362853)
-                                              : const Color(0XFF4D2999),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                         );
                       },
                     ),
@@ -207,7 +112,10 @@ class _TopupsState extends State<Topups> {
                       children: [
                         Text(
                           "${topupModel.cart!.length} products selected",
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                         CustomButton(
                           title: "Request top-up",

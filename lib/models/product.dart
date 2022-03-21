@@ -8,6 +8,7 @@ class Product {
   final int? quantityOnShelf;
   final bool? eligibleForPAYS;
   final bool? eligibleForPOD;
+  final String? type; // pay_as_you_sell || pay_on_delivery
   bool selected;
 
   Product({
@@ -20,6 +21,7 @@ class Product {
     this.quantityOnShelf,
     this.eligibleForPAYS,
     this.eligibleForPOD,
+    this.type,
     this.selected = false,
   });
 
