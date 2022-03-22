@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
   final double? horizontalPad;
   final double? textSize;
   final bool? rightSide;
+  final bool? active; // is button active
   final void Function()? function;
   const CustomButton({
     Key? key,
@@ -22,6 +23,7 @@ class CustomButton extends StatelessWidget {
     this.verticalPad = 10,
     this.horizontalPad = 15,
     this.textSize = 16,
+    this.active = true,
     this.function,
   }) : super(key: key);
 
@@ -64,7 +66,7 @@ class CustomButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                color: Colors.white,
+                color: active! ? Colors.white : Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: textSize!,
               ),
@@ -72,7 +74,7 @@ class CustomButton extends StatelessWidget {
             rightSide!
                 ? SvgPicture.asset(
                     iconPath!,
-                    color: Colors.white,
+                    color: active! ? Colors.white : Colors.black,
                     width: 15,
                   )
                 : const SizedBox()
