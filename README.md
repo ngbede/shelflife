@@ -1,16 +1,57 @@
-# shelflife
+# Shelflife
 
-A new Flutter project.
+A mobile application version of the PWA Shelflife.
 
-## Getting Started
+## Goal of the project
 
-This project is a starting point for a Flutter application.
+- To provide Shelflife users with a mobile app experience of the retailer app that works seamlessly on both android and ios.
+- To implement native features such as notifications as part of the mobile experience.
+- To decouple the retailer interface as much as possible from our larger ecosystem of SL users.
+- To improve user retention unto the service.
+- To make Shelf life more accessible to our users.
 
-A few resources to get you started if this is your first Flutter project:
+## Plan of action 
+- Build out the current retailer user interface using flutter.
+- Implement the core business logic in relation to how the retailer app should behave.
+- Integrate a SL specific REST API to communicate with our backend infrastructure.
+- Integrate the mobile app with our current CI/CD tool set to run integration tests etc.
+- Acceptance testing which can be done concurrently as the core features of the app are built.
+- Deploy the app in beta phase for select users to test and gain feedback to increment on work done.
+- Deploy a stable build of the app unto the play store.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Highlevel SL API requirements
+`GET` methods
+- /auth/username:password
+- /user/:fsid
+- /subscriptions/:fsid
+- /deliveries/:fsid
+- /stock-counts/:fsid
+- /invoice/:fsid
+- /recommendations/:market
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`POST` methods
+- /topup/ => sends order request to order DB in request body 
+- /subscription => sends a modified subscription object to integrated data
+- /user/ => modify user properties like display name & email
+
+Also external API access to SL's intercom
+
+### Development methodology to be used is 
+
+## Progress made so far
+- [x] Working bottom navigation bar for five main screens 
+- [x] Implemented initial UI components needed for Home, Products, Finance, Deliveries and Count screen.
+- [x] Topup UI and logic workflow is currently being worked on.
+
+## Screeshots of current UI
+![home](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/home.png?raw=false)
+![product](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/product.png?raw=false)
+![finance](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/finance.png?raw=false)
+![deliveries](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/deliveries.png?raw=false)
+![count](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/count.png?raw=false)
+![deliveries-view](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/delivery-view.png?raw=false)
+![topup-selection](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-selection.png?raw=false)
+![topup-confirm](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-confirm.png?raw=false)
+![topup-modal](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-modal.png?raw=false)
+![topup-final](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-final.png?raw=false)
+
