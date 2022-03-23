@@ -36,7 +36,7 @@ A mobile application version of the PWA Shelflife.
 
 Also external API access to SL's intercom
 
-### Development methodology to be used is 
+### Development methodology to be used is Agile
 
 ## Progress made so far
 - [x] Working bottom navigation bar for five main screens 
