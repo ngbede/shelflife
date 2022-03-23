@@ -1,17 +1,24 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelflife/components/base_card.dart';
 import 'package:shelflife/components/button_card.dart';
+import 'package:shelflife/main.dart';
+import 'package:shelflife/models/location.dart';
+import 'package:shelflife/models/topup.dart';
 import 'package:shelflife/utils/icons.dart';
 import 'package:shelflife/components/redirect_link.dart';
 
-class Home extends StatelessWidget {
+import '../../models/sample_products.dart';
+
+class Home extends ConsumerWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final Location pharm = ref.watch(pharmacy);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: ListView(
@@ -21,13 +28,13 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   text: "Hello, ",
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: const TextStyle(fontSize: 16, color: Colors.black),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Bugons Pharmacy",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      text: pharm.fullName,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -70,6 +77,28 @@ class Home extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             showIcon: false,
+            function: () {
+              Topup newTopup = Topup(
+                createdAt: DateTime.now().toUtc().toIso8601String(),
+                createdBy: "shega@gmail.com",
+                subscriptions: sampleProducts.sublist(0, 7),
+                cart: [],
+                products: {},
+                // products: {
+                //   "product:6299": {
+                //     "allocationType": "existing_subscription",
+                //     "original": 6,
+                //     "adjusted": 6
+                //   },
+                // },
+                destinationId: "country:ng:state:rivers:sdp:bugons-pharmacy",
+                deliveryDate: "2022-03-19",
+                funderId: "funder:droww",
+              );
+              //   log(pharm.toJson().toString());
+              print(newTopup.toJson());
+              // log(newTopup.toJson());
+            },
           ),
           const SizedBox(
             height: 20,

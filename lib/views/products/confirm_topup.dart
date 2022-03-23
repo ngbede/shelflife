@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelflife/components/custom_button.dart';
 import 'package:shelflife/components/popup_dialogs/confirm_topup_dialog.dart';
@@ -11,6 +12,7 @@ import 'package:shelflife/components/redirect_link.dart';
 import 'package:shelflife/components/sub_total.dart';
 import 'package:shelflife/components/topup_product.dart';
 
+import '../../controllers/topup_controller.dart';
 import '../../utils/icons.dart';
 
 class ConfirmTopup extends StatefulWidget {
@@ -187,7 +189,15 @@ class _ConfirmTopupState extends State<ConfirmTopup> {
                       unitsInStock: 10,
                       unitPrice: 4749,
                     ),
-                    const SubTotalStrip(totalPrice: 52338),
+                    Consumer(
+                      builder:
+                          (BuildContext context, WidgetRef ref, Widget? child) {
+                        final topupNotifier = ref.watch(topupProvider.notifier);
+                        return SubTotalStrip(
+                          totalPrice: topupNotifier.subTotalToPay(),
+                        );
+                      },
+                    ),
                     const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Text(

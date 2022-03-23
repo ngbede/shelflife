@@ -12,28 +12,30 @@ class BaseCard extends StatelessWidget {
   final Color iconColor;
   final double iconWidth;
   final double height;
+  final void Function()? function;
   final bool? showIcon;
-  const BaseCard(
-      {Key? key,
-      required this.title,
-      this.titleStyle = const TextStyle(
-        fontSize: 16,
-        color: Colors.grey,
-        // fontWeight: FontWeight.bold,
-      ),
-      required this.infoText,
-      this.infoStyle = const TextStyle(
-        fontSize: 18,
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-      ),
-      required this.linkText,
-      required this.iconPath,
-      this.iconColor = Colors.grey,
-      this.iconWidth = 16,
-      this.height = 140,
-      this.showIcon = true})
-      : super(key: key);
+  const BaseCard({
+    Key? key,
+    required this.title,
+    this.titleStyle = const TextStyle(
+      fontSize: 16,
+      color: Colors.grey,
+      // fontWeight: FontWeight.bold,
+    ),
+    required this.infoText,
+    this.infoStyle = const TextStyle(
+      fontSize: 18,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    required this.linkText,
+    required this.iconPath,
+    this.function,
+    this.iconColor = Colors.grey,
+    this.iconWidth = 16,
+    this.height = 140,
+    this.showIcon = true,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +82,7 @@ class BaseCard extends StatelessWidget {
                   ),
                   RedirectLink(
                     title: linkText,
+                    function: function,
                   )
                 ],
               ),

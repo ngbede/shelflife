@@ -9,7 +9,7 @@ import '../models/product.dart';
 class TopupController extends StateNotifier<Topup> {
   TopupController()
       : super(Topup(
-          subscriptions: sampleProducts.sublist(0, 7),
+          subscriptions: sampleProducts,
           cart: [],
           products: {},
         ));
@@ -31,7 +31,7 @@ class TopupController extends StateNotifier<Topup> {
     }
 
     state = Topup(
-      subscriptions: sampleProducts.sublist(0, 7),
+      subscriptions: sampleProducts,
       products: copyProducts,
       cart: copyCart,
     );

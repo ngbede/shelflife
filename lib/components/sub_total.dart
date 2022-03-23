@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 // The sub total strip we see on confirm topup screen
 class SubTotalStrip extends StatelessWidget {
-  final int totalPrice;
+  final double totalPrice;
   const SubTotalStrip({
     Key? key,
     required this.totalPrice,
