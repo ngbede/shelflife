@@ -36,7 +36,7 @@ A mobile application version of the PWA Shelflife.
 
 Also external API access to SL's intercom
 
-### Development methodology to be used is 
+### Development methodology to be used is Agile
 
 ## Progress made so far
 - [x] Working bottom navigation bar for five main screens 
@@ -44,14 +44,26 @@ Also external API access to SL's intercom
 - [x] Topup UI and logic workflow is currently being worked on.
 
 ## Screeshots of current UI
-![home](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/home.png?raw=false)
-![product](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/product.png?raw=false)
-![finance](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/finance.png?raw=false)
-![deliveries](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/deliveries.png?raw=false)
-![count](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/count.png?raw=false)
-![deliveries-view](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/delivery-view.png?raw=false)
-![topup-selection](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-selection.png?raw=false)
-![topup-confirm](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-confirm.png?raw=false)
-![topup-modal](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-modal.png?raw=false)
-![topup-final](https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-final.png?raw=false)
+<p align="center">
+  <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/home.png?raw=false" width="30%">
+   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/product.png?raw=false" width="30%">
+   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/finance.png?raw=false" width="30%">
+</p>
+
+<p align="center">
+  <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/deliveries.png?raw=false" width="30%">
+   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/delivery-view.png?raw=false" width="30%">
+  <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-selection.png?raw=false" width="30%">
+</p>
+
+<p align="center">
+  
+   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-confirm.png?raw=false" width="30%">
+   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-modal.png?raw=false" width="30%">
+  <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-final.png?raw=false" width="30%">
+</p>
+
+
+
+
 
