@@ -1,3 +1,0 @@
- <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7' width={width} height={height} fill={fill}>
-        <path id='Shape' d='M0,5.54V7H1.46L5.6,2.86,4.14,1.4Zm6.88-4a.39.39,0,0,0,0-.56L6,.12a.39.39,0,0,0-.56,0L4.66.88,6.12,2.34l.76-.76Z' />
-      </svg>
