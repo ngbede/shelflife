@@ -1,6 +1,6 @@
 # Shelflife
 
-A mobile application version of the PWA Shelflife.
+A mobile app UI clone of the retail pharmacy APP Shelf Life.
 
 ## Goal of the project
 
@@ -21,20 +21,18 @@ A mobile application version of the PWA Shelflife.
 
 ## Highlevel SL API requirements
 `GET` methods
-- /auth/username:password
-- /user/:fsid
-- /subscriptions/:fsid
-- /deliveries/:fsid
-- /stock-counts/:fsid
-- /invoice/:fsid
+- /auth/?username=test&password=lol
+- /user/:id
+- /subscriptions/:id
+- /deliveries/:id
+- /stock-counts/:id
+- /invoice/:id
 - /recommendations/:market
 
 `POST` methods
 - /topup/ => sends order request to order DB in request body 
 - /subscription => sends a modified subscription object to integrated data
 - /user/ => modify user properties like display name & email
-
-Also external API access to SL's intercom
 
 ### Development methodology to be used is Agile
 
@@ -62,8 +60,3 @@ Also external API access to SL's intercom
    <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-modal.png?raw=false" width="30%">
   <img src="https://github.com/ngbede/shelflife/blob/main/assets/screenshots/topup-final.png?raw=false" width="30%">
 </p>
-
-
-
-
-
